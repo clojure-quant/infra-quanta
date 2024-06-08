@@ -14,7 +14,7 @@
 
          update-repos
          (let [repos ["quanta" "quanta-demo" "fix-encoding" "fix-engine" "techml.vector-math" 
-                      "algo-demo" "algo-astro" "algo-alex" "algo-joseph" "algo-gann" "algo-juan" ""]]
+                      "algo-demo" "algo-astro" "algo-alex" "algo-joseph" "algo-gann" "algo-juan"]]
            (git/clone-or-pull-user-repos "clojure-quant"  repos))
         
 
