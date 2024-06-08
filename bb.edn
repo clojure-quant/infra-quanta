@@ -1,0 +1,23 @@
+{:paths ["bb-src"]
+ :deps {medley/medley {:mvn/version "1.3.0"}}
+
+ :tasks {:requires [[git]]
+         ; dev tools
+         ;lint (shell "clojure" "-M:lint" "src" "profiles/oauth2" "profiles/webserver")
+         ;cljs-build {:depends [npm-install
+         ;                      build-js
+         ;                      copy-resources
+         ;                      get-fonts]
+         ;            :task (shell "echo" "cljs bundle has been built!")}
+         clone (git/clone "clojure-quant" "quanta")
+         clone-pull (git/clone-or-pull "clojure-quant" "quanta")
+
+         update-repos
+         (let [repos ["quanta" "quanta-demo" "fix-encoding" "fix-engine" "techml.vector-math" 
+                      "algo-demo" "algo-astro" "algo-alex" "algo-joseph" "algo-gann" "algo-juan" ""]]
+           (git/clone-or-pull-user-repos "clojure-quant"  repos))
+        
+
+
+ ;        
+         }}
